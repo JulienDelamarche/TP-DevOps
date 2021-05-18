@@ -120,7 +120,7 @@
           remote_src: yes
           creates: /tmp/wordpress/wp-settings.php
 
-        - name: Create project folder
+      - name: Create project folder
         file:
           path: /var/www/book.example.com
           state: directory
