@@ -38,7 +38,7 @@
 
     - name: Create wp-config
       template:
-        src: templates/wordpress/wp-config.php.j2
+        src: templates/wp-config.php.j2
         dest: /var/www/wordpress/wp-config.php
 
     - name: Does the database exist?
