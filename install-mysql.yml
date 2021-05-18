@@ -102,10 +102,10 @@
 
   #Wordpress
       - name: Get WordPress checksum
-          uri:
-            url: https://wordpress.org/latest.zip.sha1
-            return_content: true
-          register: wp_checksum
+        uri:
+          url: https://wordpress.org/latest.zip.sha1
+          return_content: true
+        register: wp_checksum
 
         - name: Download Wordpress
           get_url:
