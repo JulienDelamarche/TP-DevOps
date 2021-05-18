@@ -1,2 +1,7 @@
 ---
+
+        - name: Intall unzip package
+          package:
+            name: unzip
+            state: present
 # tasks file for wp.prerequis

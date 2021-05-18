@@ -1,2 +1,17 @@
 ---
+      - name: Install nginx
+        package:
+          name: nginx
+          state: present
+
+      - name: restart nginx
+        service:
+          name: nginx
+          state: started
+
+      - name: create nginx config
+        template:
+          src: templates/default.j2
+          dest: /etc/nginx/sites-available/default
+        notify: restart nginx
 # tasks file for wp.nginx
