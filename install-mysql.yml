@@ -5,6 +5,11 @@
   hosts: wordpress
   tasks:
 
+    - name: Intall unzip package
+      package:
+        name: unzip
+        state: present
+
 # PHP
     - name: Add the ondrej PHP PPA
       apt_repository:
@@ -92,14 +97,6 @@
         dest: /etc/nginx/sites-available/default
       notify: restart nginx
 
-#HANDLERS
-  handlers:
-      - name: restart nginx
-        service:
-          name: nginx
-          state: restarted
-
-
   #Wordpress
       - name: Get WordPress checksum
         uri:
@@ -124,4 +121,11 @@
         file:
           path: /var/www/book.example.com
           state: directory
+
+#HANDLERS
+  handlers:
+      - name: restart nginx
+        service:
+          name: nginx
+          state: restarted
 ...
